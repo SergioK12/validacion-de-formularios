@@ -6,6 +6,13 @@ class LoginFormProvider extends ChangeNotifier {
   String email = '';
   String contra = '';
 
+  bool _isLoading = false;
+  bool get isLoading => _isLoading;
+  set isLoading(bool value) {
+    _isLoading = value;
+    notifyListeners();
+  }
+
   bool isValidForm() {
     debugPrint(formKey.currentState?.validate().toString());
     debugPrint("$email - $contra");
